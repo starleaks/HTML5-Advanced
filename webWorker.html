@@ -88,21 +88,26 @@
               log.html("");
               loadImg.show();
 
-              worker= new Worker("fib-worker.js");
-              worker.onmessage=messageHandler;
+              worker= new Worker("js/fib-worker.js");
+             /* worker.onmessage=messageHandler;
               worker.onerror=errorHandler;
               worker.postMessage(seriesLength);
-
+*/
             });
 
             function messageHandler(e){
               var result = e.data;
               $.each(result, function(){
                 logsMns(this);
-              })
+              });
+               loadImg.hide();
             }
             function errorHandler(e){
-              
+              logsMns(e.message);
+            }
+            function logsMns(msg)
+            {
+                log.append("<li>"+ msg + "</li>");
             }
         });
     
