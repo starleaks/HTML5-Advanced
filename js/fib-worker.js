@@ -1,4 +1,4 @@
-var results[];
+var results=[];
 
 function messageHandler(e){
 	if(e.data>0)
@@ -8,7 +8,8 @@ function messageHandler(e){
 }
 function calculateNextFononacciValue(n)
 {
-	var s=0, returnValue;
+	var s=0;
+	var returnValue;
 	if(n==0)
 	{
 		return (s);

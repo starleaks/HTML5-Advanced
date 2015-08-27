@@ -89,10 +89,9 @@
               loadImg.show();
 
               worker= new Worker("js/fib-worker.js");
-             /* worker.onmessage=messageHandler;
+              worker.onmessage=messageHandler;
               worker.onerror=errorHandler;
               worker.postMessage(seriesLength);
-*/
             });
 
             function messageHandler(e){
